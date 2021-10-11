@@ -1,0 +1,37 @@
+def prime(number):
+  if number <=1 :
+    return 0
+
+  if number == 2:
+    return 1
+
+  for i in range(2,number):
+    if number % i == 0:
+      return 0
+
+  else:
+    return 1
+
+
+n = int(input())
+
+L = []
+
+for i in range(n):
+  k = int(input())
+  L.append(k)
+
+counter = 0
+
+pL = []
+
+for i in range(len(L)-1):
+  for j in range(i+1,len(L)):
+    p = prime(abs(L[i]-L[j]))
+    if p == 1:
+      counter +=1
+      pL.append((L[i],L[j]))
+
+print('\n')
+print(pL)
+
